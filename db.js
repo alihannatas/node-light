@@ -6,11 +6,11 @@ const conn = () => {
         dbName: "lensligth",
         useNewUrlParser: true,
         useUnifiedTopology: true
-    }).then(()=> {
+    }).then(() => {
         console.log("Connected  db succesfully");
-    }).catch((err)=> {
+    }).catch((err) => {
         console.log(~`Db connection error: ${err}`);
     })
 }
 
-export default conn ;
+export default conn;

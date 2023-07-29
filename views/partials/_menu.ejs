@@ -10,21 +10,16 @@
         <div class="navbar-area" style="float:right;">
           <nav class="site-navbar">
             <ul>
-              <li>
-                <a class="<%= link === 'index' && 'active' %>" href="/">Home</a>
-              </li>
-              <li>
-                <a class="<%= link === 'about' && 'active' %>" href="/about"
-                  >About</a
-                >
-              </li>
-              <li>
-                <a class="<%= link === 'photos' && 'active' %>" href="/photos"
-                  >Photos</a
-                >
-              </li>
+              <li>  <a class="<%= link === 'index' && 'active' %>" href="/">Home</a> </li>
+              <li><a class="<%= link === 'about' && 'active' %>" href="/about">About</a></li>
+              <li><a class="<%= link === 'photos' && 'active' %>" href="/photos">Photos</a></li>
+              <% if(user) { %>
+              <li><a class="<%= link === 'dashboard' && 'active' %>" href="/users/dashboard">Dashboard</a></li>
+              <li><a class="<%= link === 'logout' && 'active' %>" href="/logout">Logout</a></li>
+              <% } else { %>
               <li><a class="<%= link === 'login' && 'active' %>" href="/login">Login</a></li>
               <li><a class="<%= link === 'register' && 'active' %>" href="/register">Register</a></li>
+              <% }%>
               <!-- <li><a href="services">Services</a></li>
               <li><a href="projects">Projects</a></li>
               <li><a href="blog">Blog</a></li>
