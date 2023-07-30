@@ -7,10 +7,19 @@ const createUser = async (req, res) => {
     const user = await User.create(req.body);
     res.redirect("/login");
   } catch (error) {
-    res.status(500).json({
-      succeded: false,
-      error,
-    });
+    const errors2 = {};
+
+    if (error.code === 11000) {
+      errors2.email = "Email is already registered";
+    }
+
+    if (error.name === "ValidationError") {
+      Object.keys(error.errors).forEach((key) => {
+        errors2[key] = error.errors[key].message;
+      });
+    }
+
+    res.status(400).json(errors2);
   }
 };
 const loginUser = async (req, res) => {
