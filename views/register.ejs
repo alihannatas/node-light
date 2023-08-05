@@ -113,7 +113,7 @@
 
         const data = await res.json();
 
-        if (data && Object.getOwnPropertyNames(data).length !== 0) {
+        if (data) {
           if (data.email) {
             emailError.textContent = data.email;
             emailError.style.display = "block";
@@ -128,7 +128,8 @@
             usernameError.textContent = data.username;
             usernameError.style.display = "block";
           }
-        } else {
+        }
+        if (data.user) {
           location.assign("/login");
         }
       } catch (err) {
