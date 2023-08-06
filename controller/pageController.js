@@ -1,8 +1,14 @@
 import nodemailler from "nodemailer";
-
-const getIndexPage = (req, res) => {
+import Photo from '../models/photoModel.js'
+import User from '../models/userModel.js'
+const getIndexPage = async (req, res) => {
+  
+   const photos = (await Photo.find().limit(6)).reverse();
+   const userCount =  await User.countDocuments({});
   res.render("index", {
     link: "index",
+    photos,
+    userCount,
   });
 };
 
