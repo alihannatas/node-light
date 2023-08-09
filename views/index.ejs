@@ -44,6 +44,7 @@
                         </div>
                      </div>
                   </div>
+                  <% if(photos.length > 1 ) {%>
                   <!-- second slide -->
                   <div class="carousel-item">
                      <div class="container">
@@ -58,6 +59,8 @@
                         </div>
                      </div>
                   </div>
+                  <% }%>
+                  <% if(photos.length >2) {%>
                   <!-- third slide-->
                   <div class="carousel-item">
                      <div class="container">
@@ -73,6 +76,7 @@
                      </div>
                   </div>
                </div>
+               <% }%>
                <!-- controls -->
                <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
                <i class="fa fa-arrow-left" aria-hidden="true"></i>

@@ -22,7 +22,7 @@ cloudinary.config({
 conn();
 
 const app = express();
-const port = process.env.PORTT;
+const port = process.env.PORT;
 
 //ejs template engine
 app.set("view engine", "ejs");

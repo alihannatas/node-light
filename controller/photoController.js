@@ -101,7 +101,7 @@ const updatePhoto = async (req, res) => {
     photo.description = req.body.description;
     photo.save();
 
-    res.status(200).redirect(`/photos/${req.params.id}`);
+    res.status(200).redirect(`/photos/${req.params.id sdasd}`);
   } catch (error) {
     res.status(500).json({
       succeded: false,
